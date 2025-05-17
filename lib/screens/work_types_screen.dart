@@ -88,8 +88,21 @@ class WorkTypesScreenState extends State<WorkTypesScreen> {
                     onPressed: _addWorkType,
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 50),
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 2,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
-                    child: const Text('Добавить тип работы'),
+                    child: const Text(
+                      'Добавить тип работы',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ],
               ),

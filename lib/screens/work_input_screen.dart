@@ -164,11 +164,32 @@ class _WorkInputScreenState extends State<WorkInputScreen> {
                   onPressed: _isSaving ? null : _saveWork,
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 50),
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    elevation: 2,
+                    shadowColor: Theme.of(context).colorScheme.shadow,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   child:
                       _isSaving
-                          ? const CircularProgressIndicator()
-                          : const Text('Сохранить'),
+                          ? const SizedBox(
+                            width: 24,
+                            height: 24,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                          : const Text(
+                            'Сохранить',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                 ),
               ],
             ),
