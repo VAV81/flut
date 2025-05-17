@@ -51,10 +51,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'История'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Типы'),
         ],
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
       ),
     );
   }

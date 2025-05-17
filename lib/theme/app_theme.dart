@@ -11,11 +11,14 @@ ThemeData getLightTheme() {
       foregroundColor: Colors.black,
       elevation: 0,
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: Colors.blue,
-      unselectedItemColor: Colors.grey,
-      elevation: 10,
+      unselectedItemColor: Colors.grey[600],
+      selectedIconTheme: const IconThemeData(size: 28),
+      unselectedIconTheme: const IconThemeData(size: 24),
+      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+      elevation: 8,
       type: BottomNavigationBarType.fixed,
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -45,7 +48,10 @@ ThemeData getDarkTheme() {
       backgroundColor: Colors.grey[850],
       selectedItemColor: Colors.blue[300],
       unselectedItemColor: Colors.grey[400],
-      elevation: 10,
+      selectedIconTheme: const IconThemeData(size: 28),
+      unselectedIconTheme: const IconThemeData(size: 24),
+      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+      elevation: 8,
       type: BottomNavigationBarType.fixed,
     ),
     inputDecorationTheme: const InputDecorationTheme(
