@@ -5,6 +5,7 @@ import 'package:intl/date_symbol_data_local.dart';
 
 import '../services/work_record_service.dart';
 import '../utils/helpers.dart' as helpers;
+import 'edit_record_screen.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -150,7 +151,25 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             subtitle: Text(
                               '${record.hours} ч × ${record.units} шт × ${record.pricePerUnit} ₽/шт',
                             ),
-                            trailing: Text('${record.totalEarned} ₽'),
+                            trailing: Text(
+                              '${record.totalEarned.toStringAsFixed(2)} ₽',
+                            ),
+                            onTap: () async {
+                              if (record.key != null) {
+                                final result = await Navigator.push<bool>(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:
+                                        (context) => EditRecordScreen(
+                                          recordKey: record.key!,
+                                        ),
+                                  ),
+                                );
+                                if (result == true) {
+                                  setState(() {}); // Обновляем список
+                                }
+                              }
+                            },
                           ),
                         );
                       },
