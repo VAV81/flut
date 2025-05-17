@@ -17,6 +17,10 @@ class WorkRecord {
   @HiveField(5)
   final double pricePerUnit;
 
+  // Добавляем поле для хранения ключа Hive (не сохраняется в базе)
+  @HiveField(6)
+  int? key;
+
   WorkRecord({
     required this.id,
     required this.date,
@@ -24,6 +28,7 @@ class WorkRecord {
     required this.hours,
     required this.units,
     required this.pricePerUnit,
+    this.key,
   });
 
   double get totalEarned => units * pricePerUnit;

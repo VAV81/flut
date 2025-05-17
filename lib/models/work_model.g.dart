@@ -23,13 +23,14 @@ class WorkRecordAdapter extends TypeAdapter<WorkRecord> {
       hours: fields[3] as double,
       units: fields[4] as int,
       pricePerUnit: fields[5] as double,
+      key: fields[6] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, WorkRecord obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class WorkRecordAdapter extends TypeAdapter<WorkRecord> {
       ..writeByte(4)
       ..write(obj.units)
       ..writeByte(5)
-      ..write(obj.pricePerUnit);
+      ..write(obj.pricePerUnit)
+      ..writeByte(6)
+      ..write(obj.key);
   }
 
   @override
